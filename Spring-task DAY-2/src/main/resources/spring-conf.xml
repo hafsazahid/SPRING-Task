@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="carNewCar" class="com.fis.app.model.Car">
+		<constructor-arg  value="Honda-Car" name="carName"></constructor-arg>
+		<constructor-arg  value="123" name="carNumber"></constructor-arg>
+		<constructor-arg> <ref bean = "engine"/>  </constructor-arg>
+		<constructor-arg> <ref bean = "ms"/>  </constructor-arg>
+		<constructor-arg  > 
+		<list>
+		<ref bean ="SeatNumber"/>
+		 
+		</list>
+		</constructor-arg>
+		
+	</bean>
+
+<!--  other scope is singleton -->
+	<bean id="carNewCar2" class="com.fis.app.model.Car" autowire="byType" 
+	          init-method="doInIt" destroy-method="doDestroy" scope="prototype">  
+	          
+		<constructor-arg name="carName" value="Creta"></constructor-arg>
+		<constructor-arg name="carNumber" value="245"></constructor-arg>
+	</bean>
+	
+	<bean id="engine" class="com.fis.app.model.Engine">
+		<constructor-arg name="engineName" value="TataEngine"></constructor-arg>
+		<constructor-arg name="power" value="1200"></constructor-arg>
+	</bean>
+	
+	<bean id="ms" class="com.fis.app.model.MusicSystem">
+		<constructor-arg name = "name" value="Poineer"></constructor-arg>
+	</bean>
+	
+	<bean id="SeatNumber" class="com.fis.app.model.CarSeat">
+		<constructor-arg value="5" name="SeatNumber"></constructor-arg>
+	</bean>
+	
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="electronics1" class="com.fis.app.model.Electronics">
+	<property value="111" name="deviceId"></property>
+	<property value="Laptop" name="deviceName"></property>
+	<property value="5000" name="price"></property>
+	<property value="9" name="Rating"></property>	
+	<property value="Black" name="color"></property>
+	</bean>
+	
+	
+	<bean id="electronics2" class="com.fis.app.model.Electronics">
+	<property value="112" name="deviceId"></property>
+	<property value="Ac" name="deviceName"></property>
+	<property value="5500" name="price"></property>
+	<property value="8" name="Rating"></property>	
+	<property value="Blue" name="color"></property>
+	</bean>
+
+<bean id="m" class="com.fis.app.model.Memory">
+  <property name="ramSize" value="555"/>
+</bean>
+</beans>
